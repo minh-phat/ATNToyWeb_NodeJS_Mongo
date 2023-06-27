@@ -1,0 +1,74 @@
+{{>headerAdmin}}
+<div class="col-md-6 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">New manager</h4>
+
+      {{#if messageSuccess}}
+      <div class="alert alert-success">
+        {{messageSuccess}}
+      </div>
+      {{/if}}
+
+      {{#if messageError}}
+      <div class="alert alert-danger">
+        {{messageError}}
+      </div>
+      {{/if}}
+      <form action="/managerAdd" method="POST">
+        <div class="form-group">
+          <label for="username">Manager userame</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="username">
+        </div>
+        <div class="form-group">
+          <label for="email">Manager email</label>
+          <input type="text" class="form-control" id="email" name="email" placeholder="email">
+        </div>
+        <div class="form-group">
+          <label for="fullname">Manager full name</label>
+          <input type="text" class="form-control" id="fullname" name="fullname" placeholder="fullname">
+        </div>
+        <div class="form-group">
+          <label for="birthday">Manager birthday</label>
+          <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="gender"><span class="hidden">Manager gender</span></label><br>
+          <input type="radio" name="gender" id="male" value="male">
+          <label style="margin-right: 30px; line-height: 1.7;" id="gender" for="male">
+            Male
+          </label>
+          <input type="radio" name="gender" id="female" value="female">
+          <label style="margin-right: 30px; line-height: 1.7;" id="gender" for="female">
+            Female
+          </label>
+          <input type="radio" name="gender" id="other" value="other">
+          <label style="margin-right: 30px; line-height: 1.7;" id="gender" for="other">
+            Other
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="password">Manager password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="confirm_password">Confirm password</label>
+          <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Name">
+        </div>
+        <button type="submit" class="btn btn-success mr-2">Submit</button>
+        <input type="button" class="btn btn-light" onclick="location.href = '/managerView';" value="Cancel">
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+</body>
+
+</html>

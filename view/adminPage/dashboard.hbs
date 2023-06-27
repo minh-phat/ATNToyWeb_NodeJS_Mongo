@@ -1,0 +1,79 @@
+{{>headerAdmin}}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 style="text-align: center; font-family: 'Lobster', cursive;">Dashboard</h1>
+                        <div class="chart" id="chart1">
+                        </div>
+                        <br>
+                        <button id="refresh1">Refresh</button>
+                        <label>Show data from: <input type="date" id="data-from1"></label>
+
+                        <div class="chart" id="chart2">
+                        </div>
+                        <br>
+                        <button id="refresh2">Refresh</button>
+                        <label>Show data from: <input type="date" id="data-from2"></label>
+
+                        <div class="chart" id="chart3">
+                        </div>
+                        <br>
+                        <button id="refresh3">Refresh</button>
+                        <label>Show data from: <input type="date" id="data-from3"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
+<script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.6.0/stitch.js"></script>
+<script src="https://unpkg.com/@mongodb-js/charts-embed-dom"></script>
+<script>
+    const sdk = new ChartsEmbedSDK({
+        baseUrl: "https://charts.mongodb.com/charts-cloud-computing---assignm-qeqsh"
+    });
+    const chart1 = sdk.createChart({
+        chartId: "6352f374-28f3-4832-83dd-b58a7f229ab5",
+        height: "720px",
+        theme: "dark"
+    });
+    chart1.render(document.getElementById("chart1"));
+    document.getElementById("refresh1").addEventListener("click", () => {
+        chart1.refresh();
+    })
+    document.getElementById("data-from1").addEventListener("change", e => {
+        const date = new Date(e.target.value);
+        chart1.setFilter({ saleDate: { $gte: date } });
+    })
+
+    const chart2 = sdk.createChart({
+        chartId: "63531b94-d55d-42ce-87db-239ca49c5a7b",
+        height: "720px",
+        theme: "dark"
+    })
+    chart2.render(document.getElementById("chart2"));
+    document.getElementById("refresh2").addEventListener("click", () => {
+        chart2.refresh();
+    })
+    document.getElementById("data-from2").addEventListener("change", e => {
+        const date = new Date(e.target.value);
+        chart2.setFilter({ saleDate: { $gte: date } });
+    })
+
+    const chart3 = sdk.createChart({
+        chartId: "63531f84-d55d-4400-8f61-239ca4accb47",
+        height: "720px",
+        theme: "dark"
+    })
+    chart3.render(document.getElementById("chart3"));
+    document.getElementById("refresh3").addEventListener("click", () => {
+        chart3.refresh();
+    })
+    document.getElementById("data-from3").addEventListener("change", e => {
+        const date = new Date(e.target.value);
+        chart3.setFilter({ saleDate: { $gte: date } });
+    })
+</script>

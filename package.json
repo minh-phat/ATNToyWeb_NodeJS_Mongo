@@ -1,0 +1,32 @@
+{
+  "name": "toyapp",
+  "version": "1.0.0",
+  "description": "Group Huy Phat Triet GCS0905A",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrshine4k/CloudComputing1644_ASM2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrshine4k/CloudComputing1644_ASM2/issues"
+  },
+  "homepage": "https://github.com/mrshine4k/CloudComputing1644_ASM2#readme",
+  "dependencies": {
+    "@mongodb-js/charts-embed-dom": "^2.3.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "mongodb": "^4.16.0",
+    "mongoose": "^6.6.5",
+    "multer": "^1.4.5-lts.1",
+    "redis": "^4.3.1"
+  }
+}

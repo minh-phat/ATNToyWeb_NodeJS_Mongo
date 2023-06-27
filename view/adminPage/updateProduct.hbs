@@ -1,0 +1,96 @@
+{{>headerAdmin}}
+<div class="col-md-9 grid-margin" style="margin: auto;">
+    <div class="card">
+        <div class="card-body">
+            <h1 style="text-align: center; font-family: 'Lobster', cursive;">Update {{product.product_name}}</h1>
+
+            {{!-- Show error message --}}
+            {{#if message}}
+            <div class="form-group">
+                <h5 style="width: 100%;background-color:#e45052;color:#fff;border-radius: 0.25rem; height:auto; padding: 10px; font-weight: 50px"
+                    id="message" onclick="this.remove();">
+                    <i class="fa-solid fa-triangle-exclamation fa-lg"></i> {{message}}
+                </h5>
+            </div>
+            {{/if}}
+
+            <form class="forms-sample" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" class="form-control" id="product_name" name="product_name"
+                        placeholder="Enter product name" value="{{product.product_name}}" oninput="updated()">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Category</label>
+                    <select name="category" id="category" class="form-control">
+                        {{#each categories}}
+                        <option value="{{this._id}}" id="{{this._id}}">{{this.category_name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="des">Description</label>
+                    <input type="text" class="form-control" id="description" name="description"
+                        placeholder="Enter description" value="{{product.description}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter price"
+                        value="{{product.price}}">
+                </div>
+
+                {{!-- Image upload and preview --}}
+                <div class="form-group">
+                    <label for="image" id="limage">Upload image</label>
+                    <div class="input-group col-xs-12">
+                        <input type="file" name="image" id="image" class="default" onchange="loadFile(event)">
+                    </div>
+                    <br>
+                    <h4 id="h4">Image preview here</h4>
+                    <img id="output" src="img/products/{{product.image}}" width="400px">
+                    <br>
+                    <script>
+                        //JS to preview image when uploaded 
+                        var loadFile = function (event) {
+                            var output = document.getElementById('output');
+                            output.src = URL.createObjectURL(event.target.files[0]);
+                            output.onload = function () {
+                                URL.revokeObjectURL(output.src) //Free memory
+                            }
+                        };
+                    </script>
+                </div>
+
+                <input type="hidden" name="_id" id="_id" value="{{product._id}}">
+                <input type="hidden" name="not-updated" id="not-updated" value="updated">
+
+                <div class="form-group">
+                    <label for="stock" id="stock">Stock</label>
+                    <input type="number" class="form-control" name="stock" id="stock"
+                        placeholder="Enter stock"
+                        value="{{product.stock}}">
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-success mr-2" style="padding:12px 10px"><i
+                            class="fa-solid fa-circle-check"></i> Submit</button>
+                    <a href="/viewProducts" class="btn btn-danger mr-2" style="padding:12px 10px"
+                        onclick="return confirm('Cancel updating this toy?')"><i class="fa-solid fa-circle-xmark"></i>
+                        Cancel</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{!-- Click to add more color --}}
+<script>
+    function updated() {
+        document.getElementById('not-updated').name = "updated";
+    }
+    //Choose category based on database
+    document.getElementById("{{product.category}}").setAttribute('selected', 'selected');
+</script>
