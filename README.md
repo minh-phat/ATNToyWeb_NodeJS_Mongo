@@ -12,4 +12,10 @@ const DB_NAME = "minhphat"; ( name of mongodb databse)<br/>
 
 how to launch web on website input http://localhost:8080
 
+<b>User Page</b> <br/>
+Home Page <br/>
+![pageHome](https://github.com/minh-phat/ATNToyWeb_NodeJS_Mongo/assets/89958212/ad42a12d-279f-4724-a2f6-6e29067df756)
+
+
+
 
