@@ -5,10 +5,10 @@ in terminal set up express to avoid error enter: npm install express (if have er
 
 changes location to connect your mongodb database
 
-const DB_USERNAME = "minhphat"; ( DB_USERNAME that mean user account in mongodb) \n
-const DB_PASSWORD = "060802"; ( DB_PASSWORD that mean password account in mongodb)
-const DB_SERVER = "cluster0.pmi9h7n.mongodb.net"; ( location to connect your mongodb)
-const DB_NAME = "minhphat"; ( name of mongodb databse)
+const DB_USERNAME = "minhphat"; ( DB_USERNAME that mean user account in mongodb) <br/>
+const DB_PASSWORD = "060802"; ( DB_PASSWORD that mean password account in mongodb)<br/>
+const DB_SERVER = "cluster0.pmi9h7n.mongodb.net"; ( location to connect your mongodb)<br/>
+const DB_NAME = "minhphat"; ( name of mongodb databse)<br/>
 
 how to launch web on website input http://localhost:8080
 
