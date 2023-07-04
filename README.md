@@ -25,6 +25,8 @@ Login Page <br/>
 Register Page <br/>
 ![RegisterPage](https://github.com/minh-phat/ATNToyWeb_NodeJS_Mongo/assets/89958212/a79fa81a-0be1-4675-a7c5-c44034c8ed24)
 
-Admin Page <br/>
-
+<b>Admin Page</b> <br/>
+Category Page <br/>
 ![ProductAdminPage](https://github.com/minh-phat/ATNToyWeb_NodeJS_Mongo/assets/89958212/36bf1e1d-f008-45cc-9875-64cf01ca0c39)
+Product Page <br/>
+![ProductAdminPage](https://github.com/minh-phat/ATNToyWeb_NodeJS_Mongo/assets/89958212/2d883155-8a77-45a8-82fa-e041bb100a1a)
