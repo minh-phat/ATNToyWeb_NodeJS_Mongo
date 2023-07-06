@@ -10,7 +10,9 @@ const DB_PASSWORD = "060802"; ( DB_PASSWORD that mean password account in mongod
 const DB_SERVER = "cluster0.pmi9h7n.mongodb.net"; ( location to connect your mongodb)<br/>
 const DB_NAME = "minhphat"; ( name of mongodb databse)<br/>
 
-how to launch web on website input http://localhost:8080
+how to launch web on website input http://localhost:8080<br/>
+
+Read the Website_startup_guide.docs file for how to launch the web
 
 <b>User Page</b> <br/>
 Home Page <br/>
